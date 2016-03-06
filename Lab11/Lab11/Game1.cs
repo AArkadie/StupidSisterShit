@@ -18,6 +18,7 @@ namespace Lab11
         TeddyBear bearry;
         Explosion splodie;
         Random r = new Random();
+        KeyboardState previousKB = Keyboard.GetState();
         
         public Game1()
         {
@@ -104,10 +105,9 @@ namespace Lab11
             }
             */
 
-            bool ks = Keyboard.GetState().IsKeyDown(Keys.A);
-            bool ks2 = Keyboard.GetState().IsKeyDown(Keys.B);
+            KeyboardState ks = Keyboard.GetState();
 
-            if (ks)
+            if (ks == ks.IsKeyUp(Keys.A))
             {
                 ks = Keyboard.GetState().IsKeyDown(Keys.A);
                 if (!ks) spawnTeddy();
