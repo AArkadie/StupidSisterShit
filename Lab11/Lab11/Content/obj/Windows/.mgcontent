@@ -4,7 +4,7 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>M:/Boss/Documents/Visual Studio 2015/Projects/Lab11/Lab11/Content/graphics/explosion.png</File>
-    <File>M:/Boss/Documents/Visual Studio 2015/Projects/Lab11/Lab11/Content/graphics/teddybear.png</File>
+    <File>C:/Users/Anthoney/Documents/Visual Studio 2015/Projects/StupidSisterShit/Lab11/Lab11/Content/graphics/explosion.png</File>
+    <File>C:/Users/Anthoney/Documents/Visual Studio 2015/Projects/StupidSisterShit/Lab11/Lab11/Content/graphics/teddybear.png</File>
   </SourceFiles>
 </SourceFileCollection>
