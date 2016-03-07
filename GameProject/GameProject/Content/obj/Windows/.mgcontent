@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>M:/Boss/Documents/Visual Studio 2015/Projects/GameProject/GameProject/Content/graphics/burger.png</File>
+    <File>M:/Boss/Documents/Visual Studio 2015/Projects/GameProject/GameProject/Content/graphics/explosion.png</File>
+    <File>M:/Boss/Documents/Visual Studio 2015/Projects/GameProject/GameProject/Content/graphics/frenchfries.png</File>
+    <File>M:/Boss/Documents/Visual Studio 2015/Projects/GameProject/GameProject/Content/graphics/teddybear.png</File>
+    <File>M:/Boss/Documents/Visual Studio 2015/Projects/GameProject/GameProject/Content/graphics/teddybearprojectile.png</File>
+  </SourceFiles>
+</SourceFileCollection>
