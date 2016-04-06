@@ -1,6 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+//add your using statements for the imported dynamic link library
+//also add your sprites.  You twat.
 
 namespace ProgrammingAssignment5
 {
@@ -11,6 +13,14 @@ namespace ProgrammingAssignment5
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        //Declare a list of TeddyBears
+        //Declare a list of Mines
+        //Other than that it's copy-pasta from other projects
+        //clicky logic from other project but this time add mine to list of mines
+        //spawns are nextdouble * 3 seconds * whatever increment game time is in
+        //remember when we collided 2 teddies and made them splode?  Like that but with mines.
+        //classic trick.  Every time we update, we fill a new list with things
+        ////that still exist.  Then we replace our active list with that list.
 
         public Game1()
         {

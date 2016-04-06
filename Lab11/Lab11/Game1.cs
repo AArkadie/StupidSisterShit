@@ -11,22 +11,21 @@ namespace Lab11
     /// </summary>
     public class Game1 : Game
     {
+        public const int WindowWidth = 800;
+        public const int WindowHeight = 600;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         TeddyBear bearry;
         Explosion splodie;
         Random r = new Random();
+        KeyboardState previousKB = Keyboard.GetState();
         
-
-        public const int windowWidth = 800;
-        public const int windowHeight = 600;
-
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            graphics.PreferredBackBufferWidth = windowWidth;
-            graphics.PreferredBackBufferHeight = windowHeight;
+            graphics.PreferredBackBufferWidth = WindowWidth;
+            graphics.PreferredBackBufferHeight = WindowHeight;
             IsMouseVisible = true;
         }
 
@@ -52,7 +51,13 @@ namespace Lab11
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            float f1 = ((float)r.NextDouble() - .5F) * 2;
+            float f2 = ((float)r.NextDouble() - .5F) * 2;
+            Vector2 vel = new Vector2(f1, f2);
+
             // TODO: use this.Content to load your game content here
+            bearry = new TeddyBear(Content, WindowWidth, WindowHeight, @"graphics/teddybear", WindowWidth / 2, WindowHeight / 2, vel);
+            splodie = new Explosion(Content, @"graphics/explosion");
         }
 
         /// <summary>
@@ -62,6 +67,20 @@ namespace Lab11
         protected override void UnloadContent()
         {
             // TODO: Unload any non ContentManager content here
+        }
+
+        ///<sumary>
+        ///Our own method for spawning a new teddy
+        ///Encapsulates Teddy spawn code so we don't have to copy-paste
+        ///</sumary>
+        public void spawnTeddy()
+        {
+            int x1 = r.Next(WindowWidth - bearry.DrawRectangle.Width);
+            int y1 = r.Next(WindowHeight - bearry.DrawRectangle.Height);
+            float v1 = ((float)r.NextDouble() - .5F) * 2;
+            float v2 = ((float)r.NextDouble() - .5F) * 2;
+            Vector2 vel1 = new Vector2(v1, v2);
+            bearry = new TeddyBear(Content, WindowWidth, WindowHeight, @"graphics/teddybear", x1, y1, vel1);
         }
 
         /// <summary>
@@ -74,7 +93,33 @@ namespace Lab11
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
+            /*
+            MouseState moz = Mouse.GetState();
+
+
+            
+            if (victim.DrawRectangle.Contains(moz.Position) && moz.LeftButton == ButtonState.Pressed)
+            {
+                victim.Active = false;
+                predator.Play(moz.X, moz.Y);
+            }
+            */
+
+            KeyboardState ks = Keyboard.GetState();
+
+            if (ks == ks.IsKeyUp(Keys.A))
+            {
+                ks = Keyboard.GetState().IsKeyDown(Keys.A);
+                if (!ks) spawnTeddy();
+            }
+            else if (ks2)
+            {
+                splodie.Play(bearry.DrawRectangle.Center.X, bearry.DrawRectangle.Center.Y);
+                spawnTeddy();
+            }
+
+            bearry.Update(gameTime);
+            splodie.Update(gameTime);
 
             base.Update(gameTime);
         }
@@ -90,7 +135,8 @@ namespace Lab11
             // TODO: Add your drawing code here
 
             spriteBatch.Begin();
-            spriteBatch.Draw(bearry);
+            bearry.Draw(spriteBatch);
+            splodie.Draw(spriteBatch);
             spriteBatch.End();
 
             base.Draw(gameTime);
