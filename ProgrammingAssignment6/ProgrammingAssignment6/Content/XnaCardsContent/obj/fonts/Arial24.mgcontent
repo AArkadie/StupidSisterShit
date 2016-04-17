@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>M:/Boss/Documents/Visual Studio 2015/Projects/ProgrammingAssignment6/ProgrammingAssignment6/Content/XnaCardsContent/fonts/Arial24.spritefont</SourceFile>
+  <SourceTime>2016-04-17T12:39:23.7342702-06:00</SourceTime>
+  <DestFile>M:/Boss/Documents/Visual Studio 2015/Projects/ProgrammingAssignment6/ProgrammingAssignment6/Content/XnaCardsContent/bin/fonts/Arial24.xnb</DestFile>
+  <DestTime>2016-04-17T12:54:35.4443314-06:00</DestTime>
+  <Importer>FontDescriptionImporter</Importer>
+  <ImporterTime>2015-04-29T11:14:44-06:00</ImporterTime>
+  <Processor>FontDescriptionProcessor</Processor>
+  <ProcessorTime>2015-04-29T11:14:44-06:00</ProcessorTime>
+  <Parameters>
+    <Key>TextureFormat</Key>
+    <Value>Compressed</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>
