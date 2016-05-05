@@ -89,18 +89,22 @@ namespace GameProject
         public void Update(GameTime gameTime)
         {
             // move projectile
-
+            drawRectangle.Y -= (int)(yVelocity * gameTime.ElapsedGameTime.Milliseconds);
             // check for outside game window
-
+            if (drawRectangle.Y > GameConstants.WindowHeight
+                || drawRectangle.Y + drawRectangle.Height < 0)
+            {
+                active = false;
+            }
         }
 
         /// <summary>
         /// Draws the projectile
         /// </summary>
-        /// <param name="spriteBatch">the sprite batch to use</param>
-        public void Draw(SpriteBatch spriteBatch)
+        /// <param name="spriteName">the sprite batch to use</param>
+        public void Draw(SpriteBatch spriteName)
         {
-
+            spriteName.Draw(sprite, drawRectangle, Color.White);
         }
 
         #endregion

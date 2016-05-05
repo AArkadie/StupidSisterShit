@@ -9,5 +9,12 @@
     <File>M:/Boss/Documents/Visual Studio 2015/Projects/GameProject/GameProject/Content/graphics/frenchfries.png</File>
     <File>M:/Boss/Documents/Visual Studio 2015/Projects/GameProject/GameProject/Content/graphics/teddybear.png</File>
     <File>M:/Boss/Documents/Visual Studio 2015/Projects/GameProject/GameProject/Content/graphics/teddybearprojectile.png</File>
+    <File>M:/Boss/Documents/Visual Studio 2015/Projects/GameProject/GameProject/Content/font/Arial20.spritefont</File>
+    <File>M:/Boss/Documents/Visual Studio 2015/Projects/GameProject/GameProject/Content/sounds/BurgerDamage.wav</File>
+    <File>M:/Boss/Documents/Visual Studio 2015/Projects/GameProject/GameProject/Content/sounds/BurgerDeath.wav</File>
+    <File>M:/Boss/Documents/Visual Studio 2015/Projects/GameProject/GameProject/Content/sounds/BurgerShot.wav</File>
+    <File>M:/Boss/Documents/Visual Studio 2015/Projects/GameProject/GameProject/Content/sounds/Explosion.wav</File>
+    <File>M:/Boss/Documents/Visual Studio 2015/Projects/GameProject/GameProject/Content/sounds/TeddyBounce.wav</File>
+    <File>M:/Boss/Documents/Visual Studio 2015/Projects/GameProject/GameProject/Content/sounds/TeddyShot.wav</File>
   </SourceFiles>
 </SourceFileCollection>
