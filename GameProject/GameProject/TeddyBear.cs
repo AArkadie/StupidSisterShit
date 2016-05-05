@@ -133,12 +133,30 @@ namespace GameProject
         public void Update(GameTime gameTime)
         {
             // move the teddy bear
-
+            drawRectangle.X += (int)(velocity.X * gameTime.ElapsedGameTime.Milliseconds);
+            drawRectangle.Y += (int)(velocity.Y * gameTime.ElapsedGameTime.Milliseconds);
             // bounce as necessary
             BounceTopBottom();
             BounceLeftRight();
 
             // fire projectile as appropriate
+            if (active)
+            {
+                elapsedShotMilliseconds += gameTime.ElapsedGameTime.Milliseconds;
+                if (elapsedShotMilliseconds > firingDelay)
+                {
+                    elapsedShotMilliseconds = 0;
+                    firingDelay = GetRandomFiringDelay();
+
+                    Projectile teddyBears = new Projectile(ProjectileType.TeddyBear,
+                        Game1.GetProjectileSprite(ProjectileType.TeddyBear),
+                        drawRectangle.X + (drawRectangle.Width / 2),
+                        drawRectangle.Y + (GameConstants.TeddyBearProjectileOffset * 2),
+                        -GetProjectileYVelocity());
+                    Game1.AddProjectile(teddyBears);
+                }
+            }
+            
             // timer concept (for animations) introduced in Chapter 7
 
         }
@@ -149,7 +167,7 @@ namespace GameProject
         /// <param name="spriteBatch">the sprite batch to use</param>
         public void Draw(SpriteBatch spriteBatch)
         {
-
+            spriteBatch.Draw(sprite, drawRectangle, Color.White);
         }
 
         #endregion
