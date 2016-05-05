@@ -92,14 +92,28 @@ namespace GameProject
         /// </summary>
         /// <param name="gameTime">game time</param>
         /// <param name="mouse">the current state of the mouse</param>
-        public void Update(GameTime gameTime, MouseState mouse)
+        public void Update(GameTime gameTime, KeyboardState kybd)
         {
             // burger should only respond to input if it still has health
             if (health > 0)
             {
-                // move burger using mouse
-                drawRectangle.X = mouse.X - sprite.Width / 2;
-                drawRectangle.Y = mouse.Y - sprite.Height / 2;
+                // move burger using keyboard
+                if (kybd.IsKeyDown(Keys.W))
+                {
+                    drawRectangle.Y -= GameConstants.BurgerMovementAmount;
+                }
+                if (kybd.IsKeyDown(Keys.A))
+                {
+                    drawRectangle.X -= GameConstants.BurgerMovementAmount;
+                }
+                if (kybd.IsKeyDown(Keys.S))
+                {
+                    drawRectangle.Y += GameConstants.BurgerMovementAmount;
+                }
+                if (kybd.IsKeyDown(Keys.D))
+                {
+                    drawRectangle.X += GameConstants.BurgerMovementAmount;
+                }
                 // clamp burger in window
                 if (drawRectangle.Left < 0)
                 {
@@ -118,8 +132,7 @@ namespace GameProject
                     drawRectangle.Y = GameConstants.WindowHeight - drawRectangle.Height;
                 }
                 // update shooting allowed
-                if (drawRectangle.Contains(mouse.Position) && canShoot
-                    && mouse.LeftButton == ButtonState.Pressed)
+                if (canShoot && kybd.IsKeyDown(Keys.Space))
                 {
                     canShoot = false;
 
@@ -130,15 +143,16 @@ namespace GameProject
                         GameConstants.FrenchFriesProjectileSpeed);
 
                     Game1.AddProjectile(frenchFries);
+                    shootSound.Play();
                 }
                 // timer concept (for animations) introduced in Chapter 7
-                if (canShoot == false)
+                if (!canShoot)
                 {
                     elapsedCooldownMilliseconds += gameTime.ElapsedGameTime.Milliseconds;
 
                     // shoot if appropriate
                     if (elapsedCooldownMilliseconds > GameConstants.BurgerTotalCooldownMilliseconds
-                            || mouse.LeftButton == ButtonState.Released)
+                            || kybd.IsKeyUp(Keys.Space))
                     {
                         elapsedCooldownMilliseconds = 0;
                         canShoot = true;

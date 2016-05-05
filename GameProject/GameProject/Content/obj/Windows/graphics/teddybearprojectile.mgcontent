@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>M:/Boss/Documents/Visual Studio 2015/Projects/GameProject/GameProject/Content/graphics/teddybearprojectile.png</SourceFile>
-  <SourceTime>2016-03-07T10:01:38.495538-07:00</SourceTime>
-  <DestFile>M:/Boss/Documents/Visual Studio 2015/Projects/GameProject/GameProject/Content/bin/Windows/graphics/teddybearprojectile.xnb</DestFile>
-  <DestTime>2016-03-07T10:02:21.3349425-07:00</DestTime>
+  <SourceFile>C:/Users/Anthoney/Documents/visual studio 2015/Projects/StupidSisterShit/GameProject/GameProject/Content/graphics/teddybearprojectile.png</SourceFile>
+  <SourceTime>2016-04-17T13:24:03.3576416-06:00</SourceTime>
+  <DestFile>C:/Users/Anthoney/Documents/visual studio 2015/Projects/StupidSisterShit/GameProject/GameProject/Content/bin/Windows/graphics/teddybearprojectile.xnb</DestFile>
+  <DestTime>2016-05-05T00:29:06.8449917-06:00</DestTime>
   <Importer>TextureImporter</Importer>
-  <ImporterTime>2015-04-29T11:14:44-06:00</ImporterTime>
+  <ImporterTime>2016-02-07T18:03:10-07:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
-  <ProcessorTime>2015-04-29T11:14:44-06:00</ProcessorTime>
+  <ProcessorTime>2016-02-07T18:03:10-07:00</ProcessorTime>
   <Parameters>
     <Key>ColorKeyColor</Key>
     <Value>255,0,255,255</Value>
